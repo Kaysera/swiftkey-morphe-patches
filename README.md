@@ -2,6 +2,16 @@
 
 Morphe patches for Microsoft SwiftKey.
 
+<a href="https://morphe.software/add-source?github=Kaysera/swiftkey-morphe-patches">
+  <img src=".github/assets/add-to-morphe.svg" alt="Add to Morphe" height="48">
+</a>
+
+Or add this repository URL manually in Morphe Manager:
+
+```
+https://github.com/Kaysera/swiftkey-morphe-patches
+```
+
 ## Patches
 
 ### Gesture input: Disabled
