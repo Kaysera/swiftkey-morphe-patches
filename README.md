@@ -27,7 +27,7 @@ unsupported build fails the patch instead of producing a broken keyboard.
 
 ## Usage
 
-1. Download the SwiftKey 9.13.20.4 XAPK.
+1. Download a supported SwiftKey XAPK (see the table above).
 2. Add this repository as a patch source in Morphe Manager, or build it locally:
    ```bash
    ./gradlew buildAndroid
@@ -38,6 +38,22 @@ unsupported build fails the patch instead of producing a broken keyboard.
    [Morphe setup documentation](https://github.com/MorpheApp/morphe-patcher/blob/main/docs/2_1_setup.md).
 3. Patch the XAPK with Morphe Manager or Morphe Desktop CLI and install the result.
 4. Open **SwiftKey Settings → Typing → Gesture input** and select **Disabled**.
+
+## Verifying on a device
+
+Morphe re-signs the APK, so Android will not install it over an existing SwiftKey
+installation. Uninstall SwiftKey first; this also clears its settings and language data.
+
+1. Install the patched APK.
+2. Open **SwiftKey Settings → Typing → Gesture input**. The list must show **Flow**,
+   **Gestures**, and **Disabled**.
+3. Select **Disabled**.
+4. On the keyboard, verify that Flow (gliding between letters) does nothing, swiping down
+   does not hide the keyboard, and swiping left does not delete a word.
+5. Switch back to **Flow** and **Gestures** and verify both work again.
+
+The patch aborts if it cannot find the gesture mode enum or selection method, rather than
+producing a keyboard that silently behaves incorrectly.
 
 ## How it works
 
